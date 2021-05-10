@@ -1,0 +1,67 @@
+nav{
+    height: 64px;
+    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.36); 
+    position: fixed;
+}
+.nav-button{
+    background: none;
+    border: none;
+    height: 64px;
+    width: 64px;
+    padding: 16px;
+    float: right;
+}
+.nav-button > i{
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+nav .nav-list{
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    top: 64px;
+    background-color: rgba(0, 0, 0, 0.36);
+    margin: 0px;
+    width: 100%;
+    display: none;
+}
+nav .nav-list > .nav-list-item{
+    height: 64px;
+    /*左右都8*/
+    margin: 0 8px;
+    padding: 0 8px;
+    /* line-height 跟 height 設一樣時，文字一定在中間 */
+    line-height: 64px;
+}
+nav .nav-list > .nav-list-item:hover, nav .nav-list > .nav-list-item:active{
+    background-color: rgba(0, 0, 0, 0.12);
+}
+nav .nav-list > .nav-list-item > a{
+    text-decoration: none;
+    color: white;
+    /*如果a在li內，只有文字才能點擊到link，所以要使用inline-block，然後width設成100%*/
+    display: inline-block;
+    width: 100%;
+}
+@media (min-width: 992px) {
+    .nav-button{
+        display: none;
+    }
+    nav .nav-list {
+        display: block !important;
+        /* position 為一般 */
+        position: static;
+        /* transparent 透明 */
+        background-color: transparent;
+        top: auto;
+        float: right;
+        width: auto;
+    }
+    nav .nav-list > .nav-list-item{
+        /* item 變成一條 */
+        float: left;
+    }
+}
